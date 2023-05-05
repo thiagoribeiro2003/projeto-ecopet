@@ -1,4 +1,4 @@
-* {
+*, *::after, *::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -128,6 +128,72 @@ body{
     border-radius: 450px;
 }
 
+/* Galeria de Imagens */
+.espacamento {
+    margin-bottom: 80px;
+ }
+
+.tituloGaleria {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--green);
+    font-size: 30px;
+}
+
+ .resumoGaleria {
+    font-size: 18px;
+    text-align: left;
+    margin: 20px;
+ }
+
+ .container {
+    padding: 25px 9% ;
+    text-align: center;
+ }
+
+ .container .container-image {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    padding: 30px;
+ }
+
+ .container .container-image .image {
+    width: 350px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgb(0,0,0,.1);
+    background-color: #fff;
+    padding: 15px;
+    animation: fadeIn .2s linear;
+ }
+
+ .container .container-image .image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 5px; 
+ }
+
+ .container .container-image .image img:hover {
+    transform: scale(1.2);
+ } 
+
+ .container .container-image .image h2{
+    font-size: 20px;
+    color: var(--dark);
+ }
+
+ @keyframes fadeIn {
+    0%{
+        transform: scale(.7) translateY(-10px);
+        opacity: 0;
+    }
+ }
+
+
 @media (max-width: 785px) {
     .navigation{
         padding: 18px 20px;
@@ -193,4 +259,27 @@ body{
         display: none;
     }
 
+    .container .container-image{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        padding: 25px 20px;
+    }
+
+    .container .container-image .image{
+        width: 100%;
+    }
+
+}
+
+@media (max-width:450px){
+    
+    .container .container-image{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        padding: 25px 20px;
+    }
+
+    .container .container-image .image{
+        width: 100%;
+    }
 }
